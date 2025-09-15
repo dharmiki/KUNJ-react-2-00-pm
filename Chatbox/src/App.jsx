@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // App.jsx
+=======
+>>>>>>> aec342e9dc86a386c54234118de4e0fceeb0dcd3
 import { useState, useEffect } from "react";
 import Chat from "./components/Chat";
 import Profile from "./components/Profile";
@@ -41,7 +44,11 @@ export default function App() {
         {showProfile ? (
           <Profile setShowProfile={setShowProfile} />
         ) : (
+<<<<<<< HEAD
           <Chat currentChat={currentChat} setCurrentChat={setCurrentChat} />
+=======
+          <Chat currentChat={currentChat} setCurrentChat={setCurrentChat}  handleNewChat={handleNewChat} />
+>>>>>>> aec342e9dc86a386c54234118de4e0fceeb0dcd3
         )}
       </div>
     </div>
