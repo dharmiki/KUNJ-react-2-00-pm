@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
+import Header from "../Components/Header";
+import Hero from "../Components/Hero";
+import Product from "../Components/Product";
+import Categories from "../Components/Categories";
+import Offers from "../Components/Offers";
+import About from "../Components/About";
+import Contact from "../Components/Contact";
+import Footer from "../Components/Footer";
 
-const UserDashboard  = () => {
+const UserDashboard = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -10,26 +18,16 @@ const UserDashboard  = () => {
 
   return (
     <div>
-      <h2>User Home Page</h2>
-      {products.length === 0 ? (
-        <p>No products available</p>
-      ) : (
-        <div>
-          {products.map((product, index) => (
-            <div key={index} style={{ border: "1px solid black", margin: "10px", padding: "10px" }}>
-              {product.image && (
-                <img src={product.image} alt={product.name} width="100" />
-              )}
-              <h3>{product.name}</h3>
-              <p>Price: {product.price}</p>
-              <p>{product.desc}</p>
-            </div>
-          ))}
-        </div>
-      )}
+      <Header></Header>
+      <Hero></Hero>
+      <Product></Product>
+      <Categories></Categories>
+      <Offers></Offers>
+      <About></About>
+      <Contact></Contact>
+      <Footer></Footer>  
     </div>
   );
 };
 
-export default UserDashboard ;
-// actually me drop lidhu hatu nd atiatre bca purse karu chu maro prospective aavo hato ke rather then taking the degree want to expert in the skills so 
+export default UserDashboard;

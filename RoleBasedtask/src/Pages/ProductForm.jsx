@@ -52,50 +52,55 @@ const ProductForm = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <h3 className="text-xl font-semibold mb-4">
-        {editIndex !== null ? "Edit Product" : "Add Product"}
-      </h3>
+    <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-100 to-pink-200 py-10 px-6">
+      {/* Wrapper */}
+      <div className="max-w-7xl mx-auto">
+        {/* Form Section */}
+        <div className="bg-white/30 backdrop-blur-xl p-8 rounded-2xl shadow-2xl border border-pink-200 mb-10">
+          <h3 className="text-2xl font-extrabold text-center text-purple-700 mb-6 tracking-wide">
+            {editIndex !== null ? "🌸 Edit Product" : "🌸 Add Product"}
+          </h3>
 
-      <div className="space-y-3">
-        <input
-          type="text"
-          placeholder="Image URL"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
-        <input
-          type="number"
-          placeholder="Price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
-        <textarea
-          placeholder="Description"
-          value={desc}
-          onChange={(e) => setDesc(e.target.value)}
-          className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        ></textarea>
-        <button
-          onClick={handleSubmit}
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
-        >
-          {editIndex !== null ? "Update Product" : "Add Product"}
-        </button>
+          <div className="space-y-4">
+            <input
+              type="text"
+              placeholder="Image URL"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+              className="w-full px-4 py-2 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 transition bg-white/60 placeholder-gray-500"
+            />
+            <input
+              type="text"
+              placeholder="Product Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full px-4 py-2 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition bg-white/60 placeholder-gray-500"
+            />
+            <input
+              type="number"
+              placeholder="Price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              className="w-full px-4 py-2 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400 transition bg-white/60 placeholder-gray-500"
+            />
+            <textarea
+              placeholder="Description"
+              value={desc}
+              onChange={(e) => setDesc(e.target.value)}
+              className="w-full px-4 py-2 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 transition bg-white/60 placeholder-gray-500"
+            ></textarea>
+            <button
+              onClick={handleSubmit}
+              className="w-full py-2 bg-gradient-to-r from-pink-400 to-purple-500 text-white font-bold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transform transition"
+            >
+              {editIndex !== null ? "✨ Update Product" : "✨ Add Product"}
+            </button>
+          </div>
+        </div>
+
+        {/* Product List */}
+        <ProductList products={products} onDelete={handleDelete} onEdit={handleEdit} />
       </div>
-
-      <hr className="my-6" />
-
-      <ProductList products={products} onDelete={handleDelete} onEdit={handleEdit} />
     </div>
   );
 };
