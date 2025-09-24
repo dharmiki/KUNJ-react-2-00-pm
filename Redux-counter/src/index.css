@@ -1,0 +1,27 @@
+#div1{
+    width: 50%;
+    height: 390px;
+    border: 1px solid black;
+    position: relative;
+    top: 100px; 
+    background-color: black;
+    box-shadow:  2px 3px 4px 5px #646464 ;
+}
+#div2
+{
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#div2 div{
+    width: 200px;
+    height: 200px;
+    border: 4px dashed white;
+    
+}
+button{
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
