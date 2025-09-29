@@ -1,20 +1,24 @@
-import Counter from "./Components/counter"
-import Counter1 from "./Components/counter1"
-import Counter2 from "./Components/counter2"
-import { stor } from "./Storage/Store"
-import {Provider} from 'react-redux'
+import React from "react";
+import Counter from "./components/Counter";
+import Counter1 from "./components/Counter1";
+import Counter2 from "./components/Counter2";
+import { useSelector } from "react-redux";
 
 function App() {
+  const nu = useSelector((state) => state.slic.cou);
 
   return (
-    <>
-      <Provider store={stor}>
-          <Counter></Counter>
-          <Counter1></Counter1>
-          <Counter2></Counter2>
-      </Provider>
-    </>
-  )
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 gap-8">
+      {/* Main Redux Counter */}
+      <Counter />
+
+      {/* Show the same Redux value in Counter1 & Counter2 */}
+      <div className="flex gap-8">
+        <Counter1 value={nu} />
+        <Counter2 value={nu} />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
